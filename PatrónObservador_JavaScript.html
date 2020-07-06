@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="orden">
+    <button>Agregar</button>
+   <ul>
+
+   </ul>
+    <script>
+        class Articulos{
+            constructor(){
+                this.articulos=['Manzana','Naranja']
+                this.persona=[]
+            }
+            Agregararticulos(){
+                this.articulos.push(articulo)
+                this.NotificarPersona()
+            }
+            Agregarpersona(callback){
+                this.persona.push(callback)
+            }
+        NotificarPersona(){
+            this.persona.forEach((persona) => {persona(this.articulos)}); 
+        }
+        }
+   
+      
+
+       class vista{
+           constructor(){
+               articulos.Agregarpersona(this.render)
+           }
+           render(articulos){
+            document.querySelector('ul').innerHTML=
+       articulos.map((articulo)=> `<li>${articulo}</li>`).join('')
+           }
+       }
+
+       document.querySelector("button").addEventListener('Click', () =>{
+           const input=document.querySelector('input')
+           const articulo=input.value
+        articulos.Agregararticulos(articulo)
+           
+       })
+        const articulos= new Articulos()
+        const vista=new vista()
+
+        articulos.Agregarpersona((articulos) =>{
+            const articulo=articulos[articulos.length -1]
+            alert(`se agrego ${articulo}`)
+        })
+    </script>
+</body>
+</html>
